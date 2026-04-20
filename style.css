@@ -6,53 +6,64 @@
   --bg-light: #f9fafb;
   --white: #ffffff;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   color: var(--text-main);
   background-color: var(--white);
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
+
 header {
   padding: 1.5rem 0;
   border-bottom: 1px solid #f3f4f6;
 }
+
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--text-main);
 }
+
 .logo span {
   color: var(--primary);
 }
+
 nav {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
+
 nav a {
   text-decoration: none;
   color: var(--text-light);
   font-weight: 500;
   transition: color 0.2s;
 }
+
 nav a:hover {
   color: var(--primary);
 }
+
 button, .btn-secondary {
   cursor: pointer;
   padding: 0.75rem 1.5rem;
@@ -61,69 +72,85 @@ button, .btn-secondary {
   transition: all 0.3s ease;
   border: none;
 }
+
 .btn-primary {
   background: var(--primary);
   color: white;
 }
+
 .btn-primary:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
 }
+
 .btn-outline {
   background: transparent;
   border: 2px solid #e5e7eb;
 }
+
 .btn-white {
   background: white;
   color: var(--primary);
 }
+
 .hero {
   padding: 5rem 0;
 }
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   align-items: center;
   gap: 4rem;
 }
+
 .hero-text h2 {
   font-size: 3.5rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
 }
+
 .hero-text h2 span {
   color: var(--primary);
 }
+
 .hero-text p {
   font-size: 1.25rem;
   color: var(--text-light);
   margin-bottom: 2rem;
 }
+
 .hero-btns {
   display: flex;
   gap: 1rem;
 }
+
 .hero-img img {
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
+
 .features {
   background: var(--bg-light);
   padding: 6rem 0;
 }
+
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
 }
+
 .section-header h2 {
   font-size: 2.5rem;
 }
+
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+
 .card {
   background: var(--white);
   padding: 2.5rem;
@@ -131,43 +158,115 @@ button, .btn-secondary {
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
 }
+
 .card:hover {
   transform: translateY(-10px);
 }
+
 .card .icon {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
 .cta {
   padding: 5rem 0;
   background: var(--primary);
   color: white;
   text-align: center;
 }
+
 .cta h2 {
-  font-size: 2.5rem; margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
+
 .cta p {
-  margin-bottom: 2rem; opacity: 0.9;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
+
 footer {
   padding: 3rem 0;
   background: #030712;
   color: #9ca3af;
   text-align: center;
 }
-@media (max-width: 968px) {
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1000px;
+  }
+  .hero-text h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 800px;
+    padding: 0 1.5rem;
+  }
+  .hero-grid {
+    gap: 2rem;
+  }
+  .hero-text h2 {
+    font-size: 2.5rem;
+  }
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-  } 
-  .hero-text h2 {
-    font-size: 2.5rem;
   }
   .hero-btns {
     justify-content: center;
   }
   nav {
     display: none;
-  } 
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding: 3rem 0;
+  }
+  .features {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  button, .btn-secondary {
+    width: 100%;
+  }
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  .cta h2 {
+    font-size: 1.8rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
 }
